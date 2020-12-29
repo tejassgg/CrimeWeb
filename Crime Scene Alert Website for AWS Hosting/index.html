@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Criminotics App | Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            background-color: #00BCD4;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+            justify-content: space-evenly;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 5px;
+
+        }
+    </style>
+
+    <link rel="stylesheet" href="../styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="../styles/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style2.css">
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Curve Chart-->
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Below 18', 'Above 18', 'Over 40'],
+                ['2004', 268, 400, 150],
+                ['2006', 130, 460, 198],
+                ['2008', 660, 1120, 500],
+                ['2010', 390, 540, 360],
+                ['2012', 430, 596, 259],
+                ['2014', 390, 540, 200],
+                ['2016', 290, 440, 250],
+                ['2018', 385, 580, 360],
+                ['2020', 190, 240, 260]
+            ]);
+
+            var options = {
+                title: 'Crime Rates',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            var chart1 = new google.visualization.LineChart(document.getElementById('curve_chart1'));
+
+            chart.draw(data, options);
+            chart1.draw(data, options);
+        }
+    </script>
+
+    <!--Pie Chart-->
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Crimes per Day'],
+                ['Murder', 15],
+                ['Kidnapping', 4],
+                ['Domestic Violence', 11],
+                ['Robbery', 8]
+            ]);
+
+            var options = {
+                title: 'Various Crime',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+            chart.draw(data, options);
+            chart1.draw(data, options);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="./Home.html">
+                <img src="../images/detectivelogo1.png" style="height: 70px; width: 70px;" alt="logo" />
+            </a>
+            <h4><a href="./Home.html">Criminotics App</a></h4>
+
+        </div>
+        <a href="./HTML/Login.html"
+            class="inline-flex items-center bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Login
+        </a>
+    </nav>
+
+    <div class="center-align">
+        <h1>The Truth,</h1>
+        <p>Crime in India is very common and happens in many
+            different ways. Along with violent crimes (like homicide, robbery, and assault), and
+            property crimes (like burglary, theft, motor vehicle theft, and arson), there are major
+            problems with organized crime, the illegal drug trade, arms trafficking, corruption, and
+            many other forms of crime.
+            Crime in India is very common and happens in many
+            different ways. Along with violent crimes (like homicide, robbery, and assault), and
+            property Crimes. </p>
+
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item " id="curve_chart" style="width: 500px; height: 250px"></div>
+        <div class="grid-item " id="piechart" style="width: 500px; height: 250px;"></div>
+        <div class="grid-item " id="piechart1" style="width: 500px; height: 250px;"></div>
+        <div class="grid-item " id="curve_chart1" style="width: 500px; height: 250px"></div>
+    </div>
+
+    <script src="./JavaScript/home1.js"></script>
+
+</body>
+
+<footer>
+    <div>
+        <ul class="text-center">
+            <li>
+                <a href="#"><i class="fab fa-facebook-f mr-5"></i></a>
+                <a href="#"><i class="fab fa-twitter mr-5"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g mr-5"></i></a>
+                <a href="#"><i class="fab fa-linked-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="text-center py-3">© 2020 Copyright:
+        <a href="https://www.instagram.com/tejassgg/"> Tejas Gumgaonkar</a>
+    </div>
+
+</footer>
+
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="../styles/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style2.css">
+
+    <title>Criminotics App</title>
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="./Home.html">
+                <img src="../images/detectivelogo1.png" style="height: 70px; width: 70px;" alt="logo" />
+            </a>
+            <h4><a href="./Home.html">Criminotics App</a></h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="./ReportCrime.html">Reported Crime</a>
+            </li>
+            <li>
+                <a href="./FiledComplaints.html">Filed Complaints</a>
+            </li>
+            <li>
+                <a href="./MissingPerson.html">Missing Person</a>
+            </li>
+            <li>
+                <a href="./OtherPolice.html">Other Police</a>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <a onclick="logout()" href="./Login.html"
+            class="inline-flex items-center bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Logout
+        </a>
+
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+
+
+    <section class="text-gray-700 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-col">
+            <div class="lg:w-4/6 mx-auto">
+                <div class="rounded-lg h-64 overflow-hidden">
+                    <img class="object-cover object-center h-full w-full" src="../images/crimelogo1.png">
+                </div>
+                <div class="flex flex-col sm:flex-row mt-10">
+                    <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                        <div
+                            class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+                            <img src="../images/wikicircle.png" />
+                        </div>
+                        <div class="flex flex-col items-center text-center justify-center">
+                            <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Wiki Pedia</h2>
+                            <div class="w-12 h-1 bg-blue-500 rounded mt-2 mb-4"></div>
+                            <p class="text-base text-gray-600">Wikipedia is an online free-content encyclopedia project
+                                helping to create a world in which everyone can freely share in the sum of all
+                                knowledge.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-300 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                        <p class="leading-relaxed text-lg mb-4">Crime in India is very common and happens in many
+                            different ways. Along with violent crimes (like homicide, robbery, and assault), and
+                            property crimes (like burglary, theft, motor vehicle theft, and arson), there are major
+                            problems with organized crime, the illegal drug trade, arms trafficking, corruption, and
+                            many other forms of crime. </p>
+                        <a href="https://simple.wikipedia.org/wiki/Crime_in_India" target="_blank"
+                            class="text-blue-500 inline-flex items-center">Learn More
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase.js"></script>
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCelRUrWZJ2Hw5KoRNwG63SNr3HkDMXcEI",
+            authDomain: "crimnotics-app.firebaseapp.com",
+            databaseURL: "https://crimnotics-app.firebaseio.com",
+            projectId: "crimnotics-app",
+            storageBucket: "crimnotics-app.appspot.com",
+            messagingSenderId: "417104798866",
+            appId: "1:417104798866:web:46e115489a0ff5ad50724b",
+            measurementId: "G-5GXB79BTTR"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="../JavaScript/home1.js"></script>
+    <script src="../JavaScript/index.js"></script>
+</body>
+
+<footer>
+    <div>
+        <ul class="text-center">
+            <li>
+                <a href="#"><i class="fab fa-facebook-f mr-5"></i></a>
+                <a href="#"><i class="fab fa-twitter mr-5"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g mr-5"></i></a>
+                <a href="#"><i class="fab fa-linked-in"></i></a>
+                <a href="https://www.instagram.com/tejassgg/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="text-center py-3">© 2020 Copyright:
+        <a href="https://www.instagram.com/tejassgg/"> Tejas Gumgaonkar</a>
+    </div>
+
+</footer>
+
+</html>

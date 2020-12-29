@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="../styles/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style2.css">
+
+    <title>Missing Person</title>
+</head>
+
+<body>
+    
+  <nav>
+    <div class="logo">
+        <a href="./Home.html">
+            <img src="../images/detectivelogo1.png" style="height: 70px; width: 70px;" alt="logo" />
+        </a>
+        <h4><a href="./Home.html">Criminotics App</a></h4>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="./ReportCrime.html">Reported Crime</a>
+        </li>
+        <li>
+            <a href="./FiledComplaints.html">Filed Complaints</a>
+        </li>
+        <li>
+            <a href="./MissingPerson.html">Missing Person</a>
+        </li>
+        <li>
+            <a href="./OtherPolice.html">Other Police</a>
+        </li>
+    </ul>
+
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <a onclick="logout()" href="./Login.html"
+        class="inline-flex items-center bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Logout
+    </a>
+</nav>
+
+      <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase.js"></script>
+      <script>
+        
+        var firebaseConfig = {
+          apiKey: "AIzaSyCelRUrWZJ2Hw5KoRNwG63SNr3HkDMXcEI",
+          authDomain: "crimnotics-app.firebaseapp.com",
+          databaseURL: "https://crimnotics-app.firebaseio.com",
+          projectId: "crimnotics-app",
+          storageBucket: "crimnotics-app.appspot.com",
+          messagingSenderId: "417104798866",
+          appId: "1:417104798866:web:46e115489a0ff5ad50724b",
+          measurementId: "G-5GXB79BTTR"
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+      
+      <script src="../JavaScript/home1.js"></script>
+      <script src="../JavaScript/index.js"></script>
+
+</body>
+
+<footer>
+  <div>
+    <ul class="text-center">
+      <li>
+        <a href="#"><i class="fab fa-facebook-f mr-5"></i></a>
+        <a href="#"><i class="fab fa-twitter mr-5"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g mr-5"></i></a>
+        <a href="#"><i class="fab fa-linked-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="text-center py-3">© 2020 Copyright:
+    <a href="https://www.instagram.com/tejassgg/"> Tejas Gumgaonkar</a>
+  </div>
+
+</footer>
+
+</html>

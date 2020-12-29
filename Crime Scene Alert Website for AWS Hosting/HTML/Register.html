@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/style1.css" rel="stylesheet">
+    <link href="../styles/style2.css" rel = "stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <title>Admin | Register</title>
+</head>
+
+<body>
+        <div id="before_login" class="main-div">
+            <img src="../images/detectivelogo1.png"/>
+            <h1>ADMIN REGISTRATION</h1>
+            <input type="text" placeholder="Name..." id="name_field"/>
+            <input type="number" placeholder="Contact..." id="contact_field"/>
+            <input type="text" placeholder="CISF Number..." id="CISF_field"/>
+            <input type="text" placeholder="Area of Police Station..." id="area_field"/>
+            <input type="email" placeholder="Email..." id="email_field"/>
+            <input type="password" placeholder="Password..." id="password_field"/>
+
+            <button id="register">Register</button>
+            <br>
+            <br>
+        </div>
+
+
+        <div id="after_login" class="loggedin_div">
+            <h3>Welcome Home</h3>
+            <p id="user_para" >Welcome to Crimnotics App Admin Section</p>
+            <a href="./Login.html"><button>Home</button></a>
+        </div>
+
+        <div class="text-center">
+          <div class="wrapper">
+              <p class="copy-footer-29">© 2020 Working Sign Up. All rights reserved | Design by <a
+                   target="blank"   href="https://www.instagram.com/tejassgg/">Tejas Gumgaonkar</a></p>
+          </div>
+      </div>
+
+        
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+<script>
+
+  var userName, userContact, userCISF, userArea, userEmail;
+
+  function Ready() {
+    userName = document.getElementById("name_field").value;
+    userContact = document.getElementById("contact_field").value;
+    userCISF = document.getElementById("CISF_field").value;
+    userArea = document.getElementById("area_field").value;
+    userEmail = document.getElementById("email_field").value;
+  }
+
+  function registerfunc() {
+    
+    var user = firebase.auth().currentUser;
+    var id = user.uid;
+
+    Ready();
+    var rootref = firebase.database().ref().child('webadmin/'+id);
+    rootref.set({
+      name: userName,
+      contact: userContact,
+      cisfno: userCISF,
+      area: userArea,
+      email: userEmail,
+      userID: id,
+      userType: 'admin'
+    });
+  }
+
+  document.getElementById('register').onclick = function() {
+
+    var email = document.getElementById("email_field").value;
+    var password = document.getElementById("password_field").value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+ 
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      window.alert("Error: " + errorMessage);
+
+      registerfunc();
+  
+    });
+    window.alert("Thanks For Registering..!!");
+  }
+
+</script>
+<script>
+  
+  var firebaseConfig = {
+    apiKey: "AIzaSyCelRUrWZJ2Hw5KoRNwG63SNr3HkDMXcEI",
+    authDomain: "crimnotics-app.firebaseapp.com",
+    databaseURL: "https://crimnotics-app.firebaseio.com",
+    projectId: "crimnotics-app",
+    storageBucket: "crimnotics-app.appspot.com",
+    messagingSenderId: "417104798866",
+    appId: "1:417104798866:web:46e115489a0ff5ad50724b",
+    measurementId: "G-5GXB79BTTR"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+
+</body>
+</html>
+
+
